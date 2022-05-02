@@ -22,10 +22,10 @@ export default function Home (){
         <div key={index} className='books'>
         
         <h3>{book.title}</h3>
-        <p>Author:{book.author}</p>
-        <p>Year:{book.year}</p>
-        <p>Genres:{book.genres.join(', ')}</p>
-        <p>ISBN:{book.ISBN}</p>
+        <p>Author: {book.author}</p>
+        <p>Year: {book.year}</p>
+        <p>Genres: {book.genres.join(', ')}</p>
+        <p>ISBN: {book.ISBN}</p>
         <NavLink to={`/books/${book._id}`}>
             <button> Info</button>
         </NavLink>

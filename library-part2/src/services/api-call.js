@@ -18,11 +18,19 @@ export const createBook = (newValue) => {
 })
   return response
 }
-
-export const deleteBook = (id) => {
+export const editBook = (newValue,id) => {
   let response = axios({
-    url:`http://localhost:3001/book/${id}`,
-    method: 'DELETE'
+    url:`http://localhost:3001/books/${id}`,
+    method: 'PUT',
+    data: newValue
 })
   return response
 }
+
+// export const deleteBook = (id) => {
+//   let response = axios({
+//     url:`http://localhost:3001/book/${id}`,
+//     method: 'DELETE'
+// })
+//   return response
+// }

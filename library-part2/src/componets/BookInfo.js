@@ -57,10 +57,10 @@ export default function BookInfo(){
             
             <img src={book.imageLink} alt='Have a nice day'/>
           <h3>{book.title}</h3>
-          <p>Author :{book.author}.</p>
-          <p>Genres:{book.genres}</p>)
-          <p>Year:{book.year}</p>
-          <p>ISBN:{ book.ISBN} </p>
+          <p>Author: {book.author}.</p>
+          <p>Genres: {book.genres}</p>
+          <p>Year: {book.year}</p>
+          <p>ISBN: {book.ISBN} </p>
           <button onClick={(e) => destroy(e)} >Delete Item</button>
     
           <NavLink to={`/books/${id}/edit`} >

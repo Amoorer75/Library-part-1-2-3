@@ -38,15 +38,25 @@ app.get('/books/:id', async (req,res) => {
 })
 
 app.put("/books/:id", async (req, res)=> {
-    try {
-        const { id } = req.params
-        bookModel.findByIdAndUpdaterequest(req.params.id, req.body);
-        await bookModel.save
+  try {
+    const { id } = req.params; 
+    bookModel.findByIdAndUpdate(id, req.body, {new:true}, (err, book) => {
+      
+        if (err) {
+            return res.status(500).send(err)
+        }
+        if (!book) {
+            return res.status(500).send('item not found')
+        }
+        return res.status(200).json(book)
+    })
+    
 
-    }catch(err){
-        return res.status(500).send(err.message)
-    }
+}catch(err){
+    return res.status(500).send(err.message)
+}
 })
+
 
 app.delete("/books/:id", async (request, response) => {
     try {
